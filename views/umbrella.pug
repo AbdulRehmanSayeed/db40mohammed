@@ -2,9 +2,10 @@ extends layout
 
 block content
   div(class="container-fluid")
-  - let results=[{colour:"Rainbow",height:6,price:20.59},{colour:"Crimson Red",height:7,price:17.39},{colour:"Black",height:6,price:14.39}]
+  //- let items=[{colour:"Rainbow",height:6,price:20.59},{colour:"Crimson Red",height:7,price:17.39},{colour:"Black",height:6,price:14.39}]
+  -let items = results
   div(class="row")
-    each form,index in results
+    each form,index in items
         div(class = "col-sm-2" onclick=`buy(${index})` ) #{form.colour}
         div(class = "col-sm-2" onclick=`buy(${index})` ) #{form.height}
         div(class = "col-sm-2" onclick=`buy(${index})` ) #{form.price}
