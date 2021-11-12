@@ -10,6 +10,7 @@ mongoose.connect(connectionString,
 {useNewUrlParser: true, 
 useUnifiedTopology: true});
 
+
 //Get the default connection 
 var db = mongoose.connection; 
  

@@ -10,6 +10,10 @@ var umbrella_controller = require('../controllers/umbrella');
  
 // GET resources base. 
 router.get('/resource', api_controller.api); 
+// GET request for one umbrella.
+router.get('/umbrellas/:id', umbrella_controller.umbrella_detail);
+
+
  
 /// umbrella ROUTES /// 
  
