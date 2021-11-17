@@ -7,6 +7,15 @@ a {
   color: #00B7FF;
 }
 .umbrellaAttr {
-  background-color: aquamarine;
+  table-layout: fixed;
+  background-color: rgb(59, 252, 75);
+  color: red;
   width: 120px;
+  font-family: Arial, Helvetica, sans-serif;
+ }
+ .lol {
+   display: table;
+   width: auto;
+   color: blue;
+
  }
