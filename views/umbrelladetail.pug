@@ -3,9 +3,10 @@ block content
  h1= title
  - let umbrellaid = toShow._id
  - let colour = toShow.colour
- - let umbrellaprice = toShow.price
+ - let umbrellaprize = toShow.prize
  - let umbrellaheight = toShow.height
-
+ - let actionid = "/resource/resource/umbrellas/" + umbrellaid
+  script let actionid = "#{actionid}"
  div
    div.row
      div(class='umbrellaAttr mr-3') umbrella ID is:
@@ -17,5 +18,5 @@ block content
      div(class='umbrellaAttr mr-3') umbrella Size is:
      div #{umbrellaheight}
    div.row
-     div(class='umbrellaAttr mr-3') umbrella price is:
-     div #{umbrellaprice}
+     div(class='umbrellaAttr mr-3') umbrella prize is:
+     div #{umbrellaprize}
