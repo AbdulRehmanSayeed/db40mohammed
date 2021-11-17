@@ -17,3 +17,6 @@ module.exports = router;
 
 /* GET detail umbrella page */
 router.get('/detail', umbrella_controlers.umbrella_view_one_Page);
+
+/* GET create umbrella page */
+router.get('/create', umbrella_controlers.umbrella_create_Page);
