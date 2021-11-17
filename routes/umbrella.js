@@ -20,3 +20,6 @@ router.get('/detail', umbrella_controlers.umbrella_view_one_Page);
 
 /* GET create umbrella page */
 router.get('/create', umbrella_controlers.umbrella_create_Page);
+
+/* GET create update page */
+router.get('/update', umbrella_controlers.umbrella_update_Page);

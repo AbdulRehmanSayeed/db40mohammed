@@ -58,7 +58,7 @@ ${JSON.stringify(req.body)}`)
  // Do updates of properties
  if(req.body.colour)
  toUpdate.colour = req.body.colour;
- if(req.body.cost) toUpdate.cost = req.body.cost;
+ if(req.body.price) toUpdate.price = req.body.price;
  if(req.body.size) toUpdate.height = req.body.height;
  let result = await toUpdate.save();
  console.log("Sucess " + result)
@@ -134,6 +134,19 @@ exports.umbrella_create_Page = function(req, res) {
     console.log("create view")
     try{
     res.render('umbrellacreate', { title: 'umbrella Create'});
+    }
+    catch(err){
+    res.status(500)
+    res.send(`{'error': '${err}'}`);
+    }
+   };
+   // Handle building the view for updating a umbrella.
+// query provides the id
+exports.umbrella_update_Page = async function(req, res) {
+    console.log("update view for item "+req.query.id)
+    try{
+    let result = await umbrella.findById(req.query.id)
+    res.render('umbrellaupdate', { title: 'umbrella Update', toShow: result });
     }
     catch(err){
     res.status(500)
