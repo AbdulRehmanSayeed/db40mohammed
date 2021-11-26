@@ -1,18 +1,12 @@
-extends layout
-
-block content
-  h1= title
-  p this is a chnage in #{title}
-  button(type="button", class="btn btn-secondary" onclick = "update()") Press me
-  a(href="umbrella") umbrella  
-  #target
-    div display
-  script. 
-    var client_count=0 
-    function update(){
-    client_count++;
-    document.getElementById("target").innerHTML=`Value now ${client_count}`
-        }
-
+extends layout 
  
- 
+block content 
+  if (!user) 
+    a(href="/login") Login 
+    br 
+    a(href="/register") Register 
+  if (user) 
+    p You are currently logged in as #{user.username} 
+    a(href="/umbrella") Take me to umbrellas 
+    br
+    a(href="/logout") logout
