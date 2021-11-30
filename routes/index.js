@@ -4,11 +4,11 @@ var router = express.Router();
 var Account = require('../models/account'); 
  
 router.get('/', function (req, res) { 
-    res.render('index', { title: 'Costume App', user : req.user }); 
+    res.render('index', { title: 'umbrella App', user : req.user }); 
 }); 
  
 router.get('/register', function(req, res) { 
-    res.render('register', { title: 'Costume App Registration'}); 
+    res.render('register', { title: 'umbrella App Registration'}); 
 }); 
  
 router.post('/register', function(req, res) { 
@@ -39,11 +39,13 @@ router.post('/register', function(req, res) {
   }) 
   
 router.get('/login', function(req, res) { 
-    res.render('login', { title: 'Costume App Login', user : req.user }); 
+    res.render('login', { title: 'umbrella App Login', user : req.user }); 
 }); 
  
 router.post('/login', passport.authenticate('local'), function(req, res) { 
-    res.redirect('/'); 
+  if(req.session.returnTo)
+    res.redirect(req.session.returnTo);
+  res.redirect('/'); 
 }); 
  
 router.get('/logout', function(req, res) {
@@ -54,5 +56,6 @@ router.get('/logout', function(req, res) {
 router.get('/ping', function(req, res){ 
     res.status(200).send("pong!"); 
 }); 
+
  
 module.exports = router; 

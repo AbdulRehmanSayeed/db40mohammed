@@ -110,7 +110,7 @@ async function recreateDB(){
       console.log("Second object saved")
     });
 
-  let instance3 = new umbrella({colour:"black",  height:6, prize:10.39}); 
+  let instance3 = new umbrella({colour:"blue",  height:6, prize:10.39}); 
   instance3.save( function(err,doc) { 
       if(err) return console.error(err); 
       console.log("third object saved")
